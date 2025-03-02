@@ -6,6 +6,7 @@
     <title>Libreria</title>
     <script src="/Js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/Js/registerValidation.js"></script>
     <link rel="stylesheet" href="/Css/bootstrap.min.css">
     <link rel="stylesheet" href="/Css/style.css">
 </head>
@@ -60,22 +61,26 @@
             <section class="presentation_register col-md-6 d-flex flex-column align-items-center">
                 <h2 class="fw-semibold text-primary">Regístrate</h2>
                 <p class="text-center text-secondary">Regístrate para poder comprar tus libros favoritos</p>
-                <form class="row g-4 custom-form">
+                <form action="/logic/createProfile.php" method="post" class="row g-4 custom-form" id="registerForm">
                     <div class="col-md-6">
                         <label for="inputName" class="form-label">Nombre o Usuario</label>
-                        <input type="text" class="form-control" id="inputName">
+                        <input type="text" class="form-control" id="inputName" name="username">
+                        <div class="error-message" id="errorName"></div>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" name="email">
+                        <div class="error-message" id="errorEmail"></div>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                        <label for="inputPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" name="password">
+                        <div class="error-message" id="errorPassword"></div>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Repita Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                        <label for="inputPasswordRepeat" class="form-label">Repita Contraseña</label>
+                        <input type="password" class="form-control" id="inputPasswordRepeat" name="password_repeat">
+                        <div class="error-message" id="errorPasswordRepeat"></div>
                     </div>
                     <div class="col-12 text-center">
                         <button type="submit" class="btn btn-custom">Crear Cuenta</button>
