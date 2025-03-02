@@ -40,49 +40,31 @@
                             </ul>
                         </li>
                     </ul>
-                    <a href="/Pages/login.html" class="btn btn-outline-light d-flex">Iniciar Sesión</a>
                 </div>
             </div>
         </nav>
     </header>
-
     <div class="text-center py-4">
         <h1 class="fw-bold text-primary">¡Bienvenido a BiblioTrack!</h1>
     </div>
-
-    <main class="presentation container">
-        <div class="row">
-            <section class="presentation_page col-md-6 d-flex flex-column align-items-center">
-                <h2 class="fw-semibold text-primary">Accede a tu biblioteca digital</h2>
-                <p class="text-center text-secondary">Gestiona tus libros, lleva un seguimiento de tu lectura y descubre nuevas historias.  
-                   ¡Crea tu cuenta ahora!</p>
-            </section>
-            <section class="presentation_register col-md-6 d-flex flex-column align-items-center">
-                <h2 class="fw-semibold text-primary">Regístrate</h2>
-                <p class="text-center text-secondary">Regístrate para poder comprar tus libros favoritos</p>
-                <form class="row g-4 custom-form">
-                    <div class="col-md-6">
-                        <label for="inputName" class="form-label">Nombre o Usuario</label>
-                        <input type="text" class="form-control" id="inputName">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label">Repita Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-custom">Crear Cuenta</button>
-                    </div>
-                </form>
-            </section>
-        </div>
+    <main>
+        <section class="d-flex justify-content-center align-items-center mt-5">
+            <form class="row g-5 custom-form2 text-center">
+                <div class="col-md-12">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                </div>
+                <div class="col-md-12">
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                </div>
+                <div class="col-12 text-center">
+                    <a href="#" class="text-decoration-none d-block">¿Olvidó su contraseña?</a>
+                </div>
+                <div class="col-12">
+                    <a href="login.html" class="btn btn-custom w-100">Iniciar Sesión</a>
+                </div>
+            </form>
+        </section>             
     </main>
+    
 </body>
 </html>
