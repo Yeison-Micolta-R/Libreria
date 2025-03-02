@@ -1,58 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registerForm");
-    const username = document.getElementById("inputName");
-    const email = document.getElementById("inputEmail");
-    const password = document.getElementById("inputPassword");
-    const passwordRepeat = document.getElementById("inputPasswordRepeat");
-    const successMessage = document.getElementById("successMessage");
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    let valid = true;
 
-    function showError(input, message) {
-        const errorElement = document.getElementById(`error${input.id.charAt(0).toUpperCase() + input.id.slice(1)}`);
-        errorElement.innerHTML = message;
-        input.classList.add("is-invalid");
+    // Obtener valores
+    let username = document.getElementById("inputName").value.trim();
+    let email = document.getElementById("inputEmail").value.trim();
+    let password = document.getElementById("inputPassword").value.trim();
+    let passwordRepeat = document.getElementById("inputPasswordRepeat").value.trim();
+
+    // Limpiar mensajes de error
+    document.querySelectorAll(".error-message").forEach(el => el.innerText = "");
+
+    // Validaciones
+    if (username.length < 3) {
+        document.getElementById("errorName").innerText = "El nombre debe tener al menos 3 caracteres.";
+        valid = false;
     }
 
-    function clearError(input) {
-        const errorElement = document.getElementById(`error${input.id.charAt(0).toUpperCase() + input.id.slice(1)}`);
-        errorElement.innerHTML = "";
-        input.classList.remove("is-invalid");
+    if (!email.includes("@")) {
+        document.getElementById("errorEmail").innerText = "Ingrese un email válido.";
+        valid = false;
     }
 
-    function validateUsername() {
-        if (username.value.trim() === "") {
-            showError(username, "El nombre de usuario es obligatorio.");
-            return false;
-        }
-        clearError(username);
-        return true;
+    if (password.length < 6) {
+        document.getElementById("errorPassword").innerText = "La contraseña debe tener al menos 6 caracteres.";
+        valid = false;
     }
 
-    function validateEmail() {
-        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value.trim())) {
-            showError(email, "Ingresa un email válido.");
-            return false;
-        }
-        clearError(email);
-        return true;
+    if (password !== passwordRepeat) {
+        document.getElementById("errorPasswordRepeat").innerText = "Las contraseñas no coinciden.";
+        valid = false;
     }
 
-    function validatePassword() {
-        if (password.value.length < 6) {
-            showError(password, "La contraseña debe tener al menos 6 caracteres.");
-            return false;
-        }
-        clearError(password);
-        return true;
-    }
-
-    function validatePasswordRepeat() {
-        if (passwordRepeat.value !== password.value) {
-            showError(passwordRepeat, "Las contraseñas no coinciden.");
-            return false;
-        }
-        clearError(passwordRepeat);
-        return true;
+    // Si hay errores, no se envía el formulario
+    if (!valid) {
+        event.preventDefault();
     }
 
     // Validación en tiempo real
