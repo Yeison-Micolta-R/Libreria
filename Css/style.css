@@ -1,97 +1,84 @@
 
-.nav-costum{
-    background-color: #ADC8CA;
+/* 🎨 Paleta de colores amigable */
+:root {
+    --primary-color: #4A90E2; /* Azul vibrante */
+    --secondary-color: #FF7F50; /* Coral */
+    --background-color: #F4F7F9; /* Gris claro */
+    --text-color: #333; /* Texto oscuro */
+    --button-hover: #357ABD; /* Azul más oscuro */
 }
 
-body{
-    background-color: #C8D8D5;
+/* Navbar estilizado */
+.nav-custom {
+    background-color: var(--primary-color);
 }
-.presentation{
+
+/* Fondo general */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Contenedor principal */
+.presentation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70vh;
-    gap: 40px;/* Fondo del Navbar */
-    .nav-custom {
-        background-color: #ADC8CA;
-    }
-    
-    /* Fondo general */
-    body {
-        background-color: #C8D8D5;
-    }
-    
-    /* Contenedor principal */
-    .presentation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 70vh;
-        gap: 40px;
-        padding: 5%;
-    }
-    
-    /* Secciones principales */
-    .presentation_page, .presentation_register {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    /* Estilos del formulario */
-    .custom-form {
-        background: url('/Assets/libro-formulario.webp') no-repeat center center;
-        background-size: cover;
-        padding: 30px;
-        border-radius: 10px;
-        color: #000;
-    }
-    
-    /* Botón personalizado */
-    .btn-custom {
-        background-color: #51686a;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .btn-custom:hover {
-        background-color: rgb(109, 194, 220);
-    }
+    gap: 40px;
     padding: 5%;
 }
-.presentation_page{
+
+/* Secciones principales */
+.presentation_page, .presentation_register {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-}
-.presentation_register{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
+/* Estilos del formulario */
 .custom-form {
-    background: url('/Assets/libro-formulario.webp') no-repeat center center;
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                url('/Assets/libro-formulario.webp') no-repeat center center;
     background-size: cover;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-.btn-custom{
-    background-color: #51686a;
-    color: #fff;
+
+/* Botón personalizado */
+.btn-custom {
+    background-color: var(--secondary-color);
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    }
-    
-    .btn-custom:hover {
-        background-color: rgb(109, 194, 220);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* Mejor legibilidad de títulos */
+h1, h2 {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+/* Navbar - mejora contraste en dropdown */
+.dropdown-menu {
+    background-color: white;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: var(--background-color);
 }
